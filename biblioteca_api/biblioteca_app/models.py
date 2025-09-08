@@ -1,5 +1,5 @@
-from django.db import models
-from django.utils import timezone
+from django.db import models  # type: ignore
+from django.utils import timezone  # type: ignore
 
 
 class Autor(models.Model):
@@ -32,7 +32,6 @@ class Libro(models.Model):
     isbn = models.CharField(max_length=13, unique=True)
     anio_publicacion = models.PositiveIntegerField()
 
-    autor = models.ForeignKey(Autor, on_delete=models.PROTECT, related_name='libros')
     editorial = models.ForeignKey(Editorial, on_delete=models.PROTECT, related_name='libros')
 
     class Meta:
