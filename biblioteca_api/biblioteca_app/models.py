@@ -32,7 +32,6 @@ class Libro(models.Model):
     isbn = models.CharField(max_length=13, unique=True)
     anio_publicacion = models.PositiveIntegerField()
 
-    autor = models.ForeignKey(Autor, on_delete=models.PROTECT, related_name='libros')
     editorial = models.ForeignKey(Editorial, on_delete=models.PROTECT, related_name='libros')
 
     class Meta:
